@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		  margin: 0;
+		  padding: 0;
+	}
+    .big{
+	    width: 100%;
+	    height:300px;
+	    background: #d8cbff;
+    }
+    .con{
+    	width: 760px;
+    	height: 300px;
+    	margin:0 auto;
+    	position: relative;
+    }
+    .pic{
+    	width: 760px;
+    	height: 300px;
+    }
+    .pic img{
+    	position: absolute;
+    	width: 760px;
+    	height: 300px;
+    	display: none;
+
+    }
+    .list{
+    	list-style: none;
+    	width: 112px;
+    	height: 22px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 11px;
+      padding: 0 4px;
+      position: absolute;
+      left: 320px;
+      bottom: 15px;
+
+    }
+    .list li{
+    	float: left;
+    	width: 8px;
+    	height: 8px;
+    	border: 1px solid #fff;
+    	border-radius: 5px;
+    	margin:6px 3px;
+    }
+    .list .active{
+    	background: #fff;
+    }
+    .but li{
+      width: 50px;
+      height: 70px;
+      list-style: none;
+      color: #fff;
+      font-size: 34px;
+      text-align: center;
+      line-height: 70px;
+      display: none;
+      position: absolute;
+      top: 115px;
+      /*改变鼠标样式*/
+      cursor: pointer;
+    }
+    .but li:hover{
+       background: rgba(0,0,0,0.2);
+    }
+    .con:hover .but li{
+      display: block;
+    }
+    .but .left{
+      left: 10px;
+    }
+    .but .right{
+      right: 10px;
+    }
+
+
+
+
+
+	</style>
+</head>
+<body>
+    <!-- div盒子模型 -->
+    <div class="big">
+      <div class="con">
+      	<div class="pic">
+      		<img src="img/1.jpg" bgc="#d8cbff" alt="" style="display: block;">
+      		<img src="img/2.jpg" bgc="#4e4d9b" alt="">
+      		<img src="img/3.jpg" bgc="#62a5d0" alt="">
+      		<img src="img/4.jpg" bgc="#f98383" alt="">
+      		<img src="img/5.jpg" bgc="#2851e9" alt="">
+      		<img src="img/6.jpg" bgc="#411b58" alt="">
+      		<img src="img/7.jpg" bgc="#7398e6" alt="">
+      	</div>
+      	<ul class="list">
+      		<li class="active"></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      	</ul>
+        <ul class="but " onselectstart="return false">
+          <li class="left">&lt;</li>
+          <li class="right">&gt;</li>
+        </ul>
+      </div>
+    </div>
+
+
+<!-- <div style="width:100%;">
+</div> -->
+    <script src="js/jquery.js"></script>
+    <script>
+
+      var a=0
+
+
+    	$(".list li").hover(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+            a=$(this).index();
+            // alert(a);
+// 来回滚动效果
+            $(".pic img").eq(a).stop(true).fadeIn().siblings().hide();
+            // 自定义属性
+            var bgColor=$(".pic img").eq(a).attr("bgc");
+// 添加背景颜色
+            $(".big").css("background",bgColor);
+      });
+
+// 左右按钮
+      $(".right").click(function(){
+             // if(a<6){
+             //  a++;
+             // }else{
+             //  a=0;
+             // }
+             (a<6)?(a++):(a=0);
+             $(".list li").eq(a).addClass("active").siblings().removeClass("active");
+             $(".pic img").eq(a).stop(true).fadeIn().siblings().hide();
+            // 自定义属性
+            var bgColor=$(".pic img").eq(a).attr("bgc");
+// 添加背景颜色
+            $(".big").css("background",bgColor);
+      });
+
+
+      $(".left").click(function(){
+             // if(a>0){
+             //  a--;
+             // }else{
+             //  a=6;
+             // }
+             (a>0)?(a--):(a=6);
+             $(".list li").eq(a).addClass("active").siblings().removeClass("active");
+             $(".pic img").eq(a).stop(true).fadeIn().siblings().hide();
+            // 自定义属性
+            var bgColor=$(".pic img").eq(a).attr("bgc");
+// 添加背景颜色
+            $(".big").css("background",bgColor);
+            // 调用
+            imgcha()
+      });
+
+// 封装
+      function imgcha(){
+
+             $(".list li").eq(a).addClass("active").siblings().removeClass("active");
+             $(".pic img").eq(a).stop(true).fadeIn().siblings().hide();
+            // 自定义属性
+            var bgColor=$(".pic img").eq(a).attr("bgc");
+// 添加背景颜色
+            $(".big").css("background",bgColor);
+
+      }
+// 自动轮播
+      function play(){
+            setInterval(function(){
+             (a<6)?(a++):(a=0);
+              imgcha();
+            },2000)
+      };
+      play()
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

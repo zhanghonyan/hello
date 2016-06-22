@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+*{
+	margin: 0;
+	padding:0;
+}
+body{
+	background: url(img4/bg.jpg) center;
+}
+.banner{
+    width: 730px;
+    height:390px;
+    margin: 150px auto;
+    overflow: hidden;
+    box-shadow: 0px 0px 30px #fff;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+.pic{
+	height: 1950px;
+	background: url(img4/1.png);
+	width: 730px;
+
+
+}
+.but{
+	width: 57px;
+	height: 290px;
+	position: fixed;
+	right: 45px;
+	top:200px;
+
+}
+.but ul li{
+    width: 60px;
+    height: 60px;
+    margin: 10px 0;
+    list-style: none;
+    background: url(img4/icon.jpg) 0px 0px;
+    cursor: pointer;
+}
+.but .l1{
+	background-position: -80px 0px;
+}
+.but .l2{
+	background-position: 0px -69px;
+}
+.but .l3{
+	background-position: 0px -139px;
+}
+.but .l4{
+	background-position: 0px 58px;
+}
+
+
+	</style>
+
+</head>
+<body>
+	<div class="banner">
+      <div class="pic">
+      </div>
+	</div>
+	<div class="but">
+		<ul>
+			<li class="l1"></li>
+			<li class="l2"></li>
+			<li class="l3"></li>
+			<li class="l4"></li>
+		</ul>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script>
+var a=0
+
+$(".but ul li").click(function(){
+  $(this).stop(true).animate({"background-position-x":"-80px"},300).siblings().css("background-position-x","0");
+    var i=$(this).index();
+	var Top=i*-390+'px';
+	$(".pic").stop(true).animate({"margin-top":Top},300);
+	a=i;
+
+});
+
+function auto()
+{
+  setInterval(function(){
+  	if (a<3) {
+  		 a++
+	   $(".but ul li").stop(true).eq(a).animate({"background-position-x":"-80px"},300).siblings().css("background-position-x","0");
+	   var Top=a*-390+'px';
+		$(".pic").stop(true).animate({"margin-top":Top},300);
+	  	}
+    else{
+    	a=0;
+    	$(".pic").stop(true).animate({"margin-top":"-1560px"},300,function(){
+    		$(this).css({"margin-top":"0"})
+    	});
+    	$(".but ul li").stop(true).eq(a).animate({"background-position-x":"-80px"},300).siblings().css("background-position-x","0");
+    }
+  },1000)
+};
+auto();
+
+	</script>
+</body>
+</html>

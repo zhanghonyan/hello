@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: "微软雅黑";
+	}
+    .top{
+    	height: 60px;
+    	width: 100%;
+    	background: #15171e;
+      position: absolute;
+    }
+    .main{
+    	width: 1100px;
+    	height: 100%;
+    	margin: 0 auto;
+    }
+    .logo{
+    	width: 103px;
+    	height: 28px;
+    	padding-top: 16px;
+    	float: left;
+    }
+    .nav{
+    	/*width: 500px;*/
+    	height: 60px;
+    	float: left;
+    	margin-left: 100px;
+    }
+    .nav li{
+    	float: left;
+    	list-style: none;
+    	line-height: 60px;
+    	padding: 0 30px;
+    	text-align: center;
+    }
+    .nav li a{
+    	text-decoration: none;
+    	color: #fff;
+    	font-size: 14px;
+    }
+
+    .hide{
+      width: 100%;
+      height: 60px;
+      background: #0ce;
+      position: absolute;
+      left: 0;
+      display: none;
+    }
+    .hide ul{
+      width: 1110px;
+      margin: 0 auto;
+    }
+
+    .hide ul li a{
+      color: #000;
+    }
+    .hide ul li a:hover{
+      color: #fff;
+      text-decoration: underline;
+    }
+    /*二级导航*/
+    .nav .li:hover .hide{
+      display: block;
+   }
+    .nav .li:hover{
+    background:#0ce;
+   }
+   /*//*/
+   .login{
+    width: 120px;
+    height: 30px;
+    float: right;
+    margin-top: 15px;
+   }
+  .login a{
+    /*color: #fff;*/
+    font-size: 14px;
+    text-decoration: none;
+    width: 55px;
+    height: 30px;
+    border: 1px solid #666;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+  }
+  .login .a1{
+  float: left;
+ }
+  .login .a1:hover{
+  background: #5580fb;
+ }
+  .login .a2{
+  float: right;
+  background: #5580fb;
+ }
+ #header{
+  width: 100%;
+  height: 100px;
+  background: #f9f;
+}
+.footer-one{
+  width: 100%;
+  height: 500px;
+  background: red;
+  margin-top: 60px;
+}
+.footer-two{
+  width: 100%;
+  height: 500px;
+  background: green;
+}
+.footer-three{
+  width: 100%;
+  height: 500px;
+  background: blue;
+}
+/*固定导航*/
+.fixed{
+  position: fixed;
+  top:0;
+}
+	</style>
+</head>
+<body>
+  <div id="header"></div>
+	<div class="top">
+      <div class="main">
+          <div class="logo">
+          	<img src="img/logo.png" alt="">
+          </div>
+          <div class="nav">
+          	<ul>
+          		<li><a href="">首页</a></li>
+          		<li class="li">
+                <a href="">课程</a>
+                <div class="hide">
+                  <ul>
+                    <li><a href="">网页制作</a></li>
+                     <li><a href="">网页制作</a></li>
+                     <li><a href="">网页制作</a></li>
+                    <li><a href="">网页制作</a></li>
+                    <li><a href="">网页制作</a></li>
+                    <li><a href="">网页制作</a></li>
+                     <li><a href="">网页制作</a></li>
+                     <li><a href="">网页制作</a></li>
+                  </ul>
+                </div>
+              </li>
+          		<li class="li">
+                <a href="">老师</a>
+                <div class="hide">
+                  <ul>
+                    <li><a href="">网页</a></li>
+                     <li><a href="">网页制作</a></li>
+                     <li><a href="">网页制作</a></li>
+                    <li><a href="">网页制作</a></li>
+                    <li><a href="">网页制作</a></li>
+                    <li><a href="">网页制作</a></li>
+                     <li><a href="">网页制作</a></li>
+                     <li><a href="">网页制作</a></li>
+                  </ul>
+                </div>
+              </li>
+          		<li><a href="">论坛</a></li>
+          		<li><a href="">咨询</a></li>
+          		<li><a href="">公告</a></li>
+          	</ul>
+          </div>
+          <div class="login">
+            <a href="" class="a1">登录</a>
+            <a href="" class="a2">注册</a>
+          </div>
+      </div>
+	</div>
+
+   <div class="footer-one"></div>
+   <div class="footer-two"></div>
+   <div class="footer-three"></div>
+
+
+  <script src="js/jquery.js"></script>
+   <script>
+
+// 顶部导航固定
+   var topHead=$("#header").height();
+   $(window).scroll(function(){
+     var topScr=$(window ).scrollTop();
+     if(topScr>topHead){
+      $(".top").addClass("fixed")
+     }else{
+       $(".top").removeClass("fixed")
+     }
+   })
+   </script>
+</body>
+</html>

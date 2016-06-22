@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+*{
+	margin: 0;
+	padding:0;
+}
+
+body{
+	background: url(img5/bg.png);
+	font-family: "微软雅黑"
+}
+.banner{
+	width: 945px;
+	height: 645px;
+	margin: 100px auto;
+
+
+}
+.banner ul li{
+	list-style: none;
+	float: left;
+	width: 235px;
+	height: 645px;
+	margin: 0 auto;
+	opacity: .5;
+	transform:1s;
+}
+
+.on{
+	background: #e7e7e7;
+	width: 200px;
+	height: 130px;
+    position: absolute;
+   top: 20px;
+    left:0px;
+    color: #000;
+    opacity: 0;
+    box-shadow: 0px 0px 5px #fff;
+}
+
+.banner .l1{
+	background: url(img5/1.jpg);
+}
+.banner .l2{
+	background: url(img5/2.jpg);
+}
+.banner .l3{
+	background: url(img5/3.jpg);
+}
+.banner .l4{
+	background: url(img5/4.jpg);
+
+}
+.txt{
+	width: 200px;
+	height: 100px;
+	background: rgba(0,0,0,.5);
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 500px;
+	color: #fff;
+	padding-top: 30px;
+	cursor: pointer;
+	position: relative;
+}
+.banner li .txt h3{
+	border-bottom: 1px solid #fff;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+.login label{
+	display: block;
+	margin-top: 20px;
+}
+
+	</style>
+</head>
+<body>
+	<div class="banner">
+
+		<ul>
+			<li class="l1">
+				<div class="txt">
+					<h3 class="h3">《小时代·青木时代》</h3>
+					<p>2013-08-09</p>
+					<h6>友情入泥淖</h6>
+	                <div class="on">
+							ahregb
+					</div>
+				</div>
+
+			</li>
+			<li class="l2">
+				<div class="txt">
+					<h3 class="h3">《小时代·青木时代》</h3>
+					<p>2013-08-09</p>
+					<h6>友情入泥淖</h6>
+					<div class="on">
+						ahregb
+				    </div>
+				</div>
+
+			</li>
+			<li class="l3">
+				<div class="txt">
+					<h3 class="h3">《小时代·青木时代》</h3>
+					<p>2013-08-09</p>
+					<h6>友情入泥淖</h6>
+					<div class="on">
+						ahregb
+				    </div>
+				</div>
+
+			</li>
+			<li class="l4">
+				<div class="txt">
+					<h3 class="h3">《小时代·青木时代》</h3>
+					<p>2013-08-09</p>
+					<h6>友情入泥淖</h6>
+					<div class="on">
+						ahregb
+				    </div>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+
+	<div class="login">
+		<input type="text" value="密码">
+		<label for="">错误</label>
+	</div>
+	<p>11</p>
+
+
+	<script src="js/jquery.js"></script>
+	<script>
+	$(".banner ul li").hover(function(){
+        $(this).animate({opacity:1},500);
+        $(this).find(".on").animate({
+        	top:0,
+        	opacity:1
+        },500);
+	},function(){
+        $(this).animate({opacity:.5},500);
+        $(this).find(".on").animate({
+        	top:20,
+        	opacity:0
+        },500);
+	});
+	</script>
+</body>
+</html>

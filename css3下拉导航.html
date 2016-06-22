@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉导航</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+
+}
+body{
+	background:url(img/title.jpg) repeat-x,url(img/bg1.jpg);
+}
+.header{
+	width: 916px;
+	height: 47px;
+	margin: 50px auto;
+	background:-webkit-linear-gradient(top,rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.8) 50%,rgba(255,255,255,0.2) 100%);
+	box-shadow: 0 0 30px rgba(255,255,255, .8);
+	border-radius: 5px;
+}
+.header ul li{
+	float: left;
+	list-style: none;
+	width: 130px;
+	line-height: 47px;
+	height: 47px;
+	text-align: center;
+	border-right: 1px solid #000;
+	cursor: pointer;
+	font-size: 14px;
+	color: #fff;
+}
+.header .first{
+	border-radius: 5px 0 0 5px;
+}
+.header .last{
+	border-right: none;
+	border-radius: 0 5px 5px 0;
+}
+.header ul li:hover{
+	background: rgba(10,5,5,.5);
+
+}
+.header .first:hover .hid li{
+	/*display: block;*/
+	/*transition:1s;*/
+	/*height: */
+}
+.header .hid1{
+	display: none;
+
+}
+.header ul li:hover .hid1{
+	display: block;
+	-webkit-animation:anim 1s;
+}
+.header .hid1 li{
+	border: none;
+	background: rgba(10,5,5,0.45);
+    /*display: none;*/
+}
+.header .hid li{
+	border: none;
+	background: rgba(10,5,5,0.45);
+    display: none;
+}
+.header .hid li:hover{
+	background: rgba(10,5,5,.7);
+}
+.header .hid1 li:hover{
+	background: rgba(10,5,5,.7);
+}
+/*定义动画*/
+@-webkit-keyframes'anim'{
+	from(-webkit-transform:rotateY(0deg);)
+	to(-webkit-transform:rotateY(360deg);)
+}
+
+</style>
+
+
+
+</head>
+<body>
+  <div class="header">
+    <ul>
+    	<li class="first">
+    	前端设计
+          <ul class="hid">
+          	<li>html5</li>
+          	<li>css3</li>
+          	<li>jq</li>
+          </ul>
+    	</li>
+    	<li>网页设计</li>
+    	<li>动画设计</li>
+    	<li>编程语言</li>
+    	<li>手机开发</li>
+    	<li>开源程序</li>
+    	<li class="last">
+    	我的语言
+    	  <ul class="hid1">
+          	<li>html5</li>
+          	<li>css3</li>
+          	<li>jq</li>
+          </ul>
+    	</li>
+    </ul>
+  </div>
+</body>
+
+<script src="js/jquery.js"></script>
+  <script>
+
+$(document).ready(function(){
+  $(".header .first").hover(function(){
+  $(".header .first .hid li").slideToggle(1000);
+  });
+});
+
+
+  </script>
+
+</html>

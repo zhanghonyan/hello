@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+*{
+	margin: 0;
+	padding:0;
+	font-family: "微软雅黑"
+}
+.main{
+	width: 600px;
+	height: 360px;
+	margin: 50px auto;
+}
+.cho{
+	height: 220px;
+	width: 600px;
+	border-bottom: 1px solid #ccc;
+}
+.cho ul li{
+	list-style: none;
+	margin-bottom: 15px;
+}
+.cho ul li b{
+	font-size: 14px;
+	font-weight: normal;
+	margin-right: 20px;
+	display: inline-block;
+}
+.cho ul li span{
+	font-size:14px;
+	border:1px solid #ccc;
+	padding:8px;
+	color: #666;
+	display: inline-block;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.cho .on{
+	border:2px solid #e9630a;
+	padding:7px;
+	background: url(img/on.png) no-repeat 100% 100%;
+}
+.sub{
+	width: 600px;
+	height: 130px;
+	padding-top: 20px;
+}
+.sub p{
+	font-size: 18px;
+}
+.sub p span{
+	color: #e9630a;
+}
+.sub p span b{
+	font-weight: normal;
+}
+.sub p a{
+    font-size: 14px;
+    margin-left: 50px;
+}
+.sub p a i{
+	color: #990033;
+}
+.sub input{
+	width: 230px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	background: #e9630a;
+	border:none;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+
+
+
+	</style>
+</head>
+<body>
+   <div class="main">
+     <div class="cho">
+     	<ul>
+     		<li class="model">
+     		  <b>型号：</b>
+     		  <span class="on">4.7英寸</span>
+     		  <span>5.5英寸</span>
+     		</li>
+     		<li>
+     		  <b>颜色：</b>
+     		  <span class="on">银色</span>
+     		  <span>金色</span>
+     		  <span>灰色</span>
+     		</li>
+     		<li class="rom">
+     		  <b>内存：</b>
+     		  <span class="on">16GB</span>
+     		  <span>64GB</span>
+     		  <span>128GB</span>
+     		</li>
+     		<li>
+     		  <b>类型：</b>
+     		  <span class="on">公开版</span>
+     		  <span>移动版</span>
+     		  <span>联通版</span>
+     		</li>
+     	</ul>
+     </div>
+     <div class="sub">
+     	<p>
+     		价格：<span>￥<b>5288</b>.00 </span><a href="#"> <i>移动版</i> 和 <i>灵通版</i> 付费点击这里</a>
+     	</p>
+     	<input type="button" value="立即支付">
+     </div>
+   </div>
+ <script src="js/jquery.js"></script>
+ <script>
+
+$(".cho ul li span").click(function(){
+	$(this).addClass('on').siblings().removeClass('on');
+});
+
+
+var pri=5288;
+var prir=0;
+$(".model span").click(function(){
+	// 序列号
+    var a=$(this).index();
+    switch (a){
+    case 1:
+      pri=5288;
+      break;
+    case 2:
+      pri=6088;
+      break;
+    }
+    $(".sub p span b").html(pri+prir);
+});
+
+
+$(".rom span").click(function(){
+    var a=$(this).index();
+    switch (a){
+    case 1:
+      prir=0;
+      break;
+    case 2:
+      prir=800;
+      break;
+    case 3:
+      prir=1600;
+      break;
+    }
+    $(".sub p span b").html(pri+prir);
+});
+
+
+ </script>
+</body>
+</html>

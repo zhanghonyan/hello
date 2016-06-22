@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+
+/*css3*/
+*{
+	margin:0;
+	padding: 0;
+}
+.wrap{
+	width: 800px;
+	height: 360px;
+    margin:360px auto;
+    perspective:800px;
+}
+.pic li{
+	list-style: none;
+	width: 200px;
+	height: 360px;
+	float: left;
+	position: relative;
+	transform-style:preserve-3d;
+	transition:2s;
+	transform:translateZ(-180px);
+}
+.pic li span{
+	width: 200px;
+	height: 360px;
+	display: block;
+	position: absolute;
+}
+.pic li span:nth-child(1){
+	top: -360px;
+	transform-origin:bottom;
+	transform:translateZ(180px) rotateX(90deg);
+	background: url(img/1-2.png);
+}
+.pic li span:nth-child(2){
+	top: 360px;
+	transform-origin:top;
+	transform:translateZ(180px) rotateX(-90deg);
+	background: url(img/1-3.jpg);
+}
+.pic li span:nth-child(3){
+    transform:translateZ(180px);
+    background: url(img/1-1.png);
+}
+.pic li span:nth-child(4){
+    transform:translateZ(-180px) rotateX(180deg);
+    background: url(img/1-4.jpg);
+}
+
+.pic:hover li{
+	transform:translateZ(-180px) rotateX(180deg);
+}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+      <ul class="pic">
+      	<li><span></span><span></span><span></span><span></span></li>
+        <li><span></span><span></span><span></span> <span></span></li>
+      	<li><span></span><span></span><span></span><span></span></li>
+      	<li style="z-index:0;"><span></span><span></span><span></span><span></span></li>
+      </ul>
+	</div>
+
+
+
+	<ul>
+		<li><a href="">首页</a></li>
+		<li><a href="">首页</a></li>
+		<li><a href="">首页</a></li>
+		<li><a href="">首页</a></li>
+		<li><a href="">首页</a></li>
+	</ul>
+<script>
+
+</script>
+
+</body>
+</html>

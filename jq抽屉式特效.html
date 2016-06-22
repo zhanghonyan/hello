@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+*{
+	margin: 0;
+	padding:0;
+}
+body{
+	background: url(img3/bg.jpg);
+}
+.pic{
+	width: 1100px;
+	height: 430px;
+	margin: 170px auto;
+	position: relative;
+	font-family: "微软雅黑";
+
+}
+.pic ul li{
+	list-style: none;
+	position: relative;
+	width: 100px;
+    height: 430px;
+    float: left;
+}
+.pic ul .l1{
+    background: url(img3/1.jpg);
+}
+.pic ul .l2{
+    background: url(img3/2.jpg);
+}
+.pic ul .l3{
+    background: url(img3/3.jpg);
+}
+.pic ul .l4{
+    background: url(img3/4.jpg);
+    width: 790px;
+}
+.txt{
+	width: 100px;
+	height: 430px;
+	background-color:rgba(0,0,0,.5);
+	color: #fff;
+	/*background: #000;
+	filter:alpha(opacity=50);*/
+}
+.txt h4{
+   font-size: 14px;
+   width: 14px;
+   float: left;
+   margin-top: 25px ;
+   margin-left: 20px;
+   position: relative;
+}
+.txt p{
+	font-size: 12px;
+	width: 12px;
+	float: left;
+	margin: 25px 15px 0 20px;
+	position: relative;
+}
+
+	</style>
+</head>
+<body>
+	<div class="pic">
+		<ul>
+			<li class="l1">
+				<div class="txt">
+                  <h4>我的个人西藏之旅</h4>
+                  <p>沫沫的默默</p>
+				</div>
+			</li>
+			<li class="l2">
+				<div class="txt">
+                  <h4>我的个人西藏之旅</h4>
+                  <p>沫沫的默默</p>
+				</div>
+			</li>
+			<li class="l3">
+				<div class="txt">
+                  <h4>我的个人西藏之旅</h4>
+                  <p>沫沫的默默</p>
+				</div>
+			</li>
+			<li class="l4">
+				<div class="txt">
+                  <h4>我的个人西藏之旅</h4>
+                  <p>沫沫的默默</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script>
+$(".pic ul li").hover(function(){
+  $(this).animate({width:"790px"}).siblings().animate({width:"100px"});
+});
+
+	</script>
+</body>
+</html>

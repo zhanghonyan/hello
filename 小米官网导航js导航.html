@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+*{
+	margin: 0;
+	padding:0;
+	margin:0 auto;
+	font-family: "微软雅黑";
+}
+h2{
+	margin: 0;
+}
+.nav{
+	width: 930px;
+	height: 52px;
+	background: #3f9;
+	margin-top: 100px;
+	/*color: #fff;*/
+	/*line-height: 52px;*/
+	font-size: 20px;
+	font-weight: normal;
+}
+.nav h2{
+	width: 250px;
+	height: 52px;
+	background: #ff4a00;
+	line-height: 52px;
+	text-indent: 20px;
+	float: left;
+}
+.nav h2 a{
+	width: 250px;
+	height: 52px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+    font-size: 20px;
+	font-weight: normal;
+}
+.nav ul{
+   float: right;
+   width: 680px;
+   height: 52px;
+   background: #404144;
+   position: relative;
+}
+.nav ul li{
+	float: left;
+	list-style: none;
+}
+.nav ul li a{
+	text-decoration: none;
+	color: #fff;
+	font-weight: normal;
+	font-size: 16px;
+	display: block;
+	padding:0 11px;
+	height: 52px;
+	line-height: 52px;
+  }
+.nav ul li a:hover{
+	background: #333;
+}
+.pro{
+	width: 680px;
+	height: 200px;
+	background: #fff;
+	position: absolute;
+	left:0;
+	display: none;
+}
+.info{
+	width: 339px;
+	height: 200px;
+	border-right: 1px solid #ccc;
+	float: left;
+}
+.pic{
+	float: left;
+	margin-top: 30px;
+}
+.txt{
+	float: left;
+	margin-top: 50px;
+	padding: 0;
+}
+.txt .p1{
+	font-size: 16px;
+}
+.txt .p2{
+	font-size: 14px;
+	color: #ccc;
+}
+.txt .p3{
+	font-size: 16px;
+	color:#ff4a00;
+    margin-top: 30px;
+}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="nav">
+       <h2><a href="">全部商品分类</a></h2>
+       <ul>
+       	<li><a href="">首页</a></li>
+       	<li >
+       	  <a href="" class="hov">小米手机</a>
+       	  <div class="pro">
+             <div class="info">
+               <div class="pic"><img src="img/xm1.jpg" alt=""></div>
+               <div class="txt">
+               	<p class="p1">小米手机4</p>
+               	<p class="p2">工艺和手感，超乎想象</p>
+               	<p class="p3"><b>1999元起</b></p>
+               </div>
+             </div>
+             <div class="info">
+             	<div class="pic"><img src="img/xm2.jpg" alt=""></div>
+             	<div class="txt">
+               	<p class="p1">小米手机4</p>
+               	<p class="p2">工艺和手感，超乎想象</p>
+               	<p class="p3"><b>1999元起</b></p>
+               </div>
+             </div>
+       	  </div>
+       	</li>
+       	<li >
+       	  <a href="" class="hov" >红米</a>
+          <div class="pro">
+             <div class="info">
+               <div class="pic"><img src="img/hm1.jpg" alt=""></div>
+               <div class="txt">
+               	<p class="p1">小米手机4</p>
+               	<p class="p2">工艺和手感，超乎想象</p>
+               	<p class="p3"><b>1999元起</b></p>
+               </div>
+             </div>
+             <div class="info">
+             	<div class="pic"><img src="img/hm2.jpg" alt=""></div>
+             	<div class="txt">
+               	<p class="p1">小米手机4</p>
+               	<p class="p2">工艺和手感，超乎想象</p>
+               	<p class="p3"><b>1999元起</b></p>
+               </div>
+             </div>
+       	  </div>
+       	</li>
+       	<li><a href="">小米平板</a></li>
+       	<li><a href="">小米电视</a></li>
+       	<li><a href="">盒子</a></li>
+       	<li><a href="">路由器</a></li>
+       	<li><a href="">合约机</a></li>
+       	<li><a href="">服务</a></li>
+       	<li><a href="">社区</a></li>
+
+       </ul>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+
+$(document).ready(function(){
+  $(".hov").hover(function(){
+  $(this).next(".pro").delay(400).stop(true).slideToggle();
+  });
+});
+// $(".hov").hover(function(){
+// 	$(this).find(".pro").stop(true).slideDown();
+// },function(){
+// 	$(this).find(".pro").stop(true).slideUp();
+// });
+
+
+
+</script>
+
+
+</html>
